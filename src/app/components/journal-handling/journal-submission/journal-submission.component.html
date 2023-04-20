@@ -1,0 +1,83 @@
+<!-- <div class="container" >
+    
+<carousel class = "carousel-img vh-50">
+    <slide>
+      <img src="../../../../assets/images/carousoul-img1.jpg" alt="first slide" style=" display: block; width: 100%; height: 300px;">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </slide>
+    <slide>
+      <img src="../../../../assets/images/carousoul-img2.jpg" alt="second slide" style="display: block; height: 300px; width: 100%;">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </slide>
+    <slide>
+      <img src="../../../../assets/images/carousoul-img3.jpg" alt="third slide" style="display: block; height: 300px; width: 100%;">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Third slide label</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </slide>
+  </carousel>
+</div> -->
+
+<div class="p-3 m-2 title border">
+  <h1>Submit your Journal</h1>
+</div>
+<form [formGroup]="submission_form" (submit)="onSubmit()">
+  {{this.submission_form.value | json}}
+  <fieldset class="fieldset-custom">
+    <legend class="legend-custom my-3">Journal</legend>
+    <div class="form-group border p-2">
+      <label for="message ">title:</label>
+      <input
+      formControlName = "journal_title"
+        type="text"
+        class="form-control mt-3"
+        id="message"
+        placeholder="Enter Journal title"
+      />
+    </div>
+    <div class="form-group border p-2 my-3">
+      <label for="description" class="my-3">description:</label>
+      <textarea
+        formControlName = "journal_description"
+        class="form-control"
+        id="description"
+        rows="3"
+        placeholder="Enter Journal description"
+      ></textarea>
+    </div>
+
+    <div class="form-group border my-3 p-2">
+      <label for="app_letter" class="my-3">Upload letter of application</label
+      ><br />
+      <input type="file" formControlName="letter_of_app" class="form-control-file p-3" id="app_letter" />
+    </div>
+
+    <div class="form-group border my-3 p-2">
+      <label for="file" class="my-3"> <strong> Upload a journal</strong></label
+      ><br />
+      <input type="file" formControlName="journal_file" class="form-control-file p-3" id="file" />
+    </div>
+  </fieldset>
+
+  <fieldset class="fieldset-custom m-2">
+    <legend class="legend-custom my-3">Contributors</legend>
+    <div class="form-group border p-3 d-flex justify-content-center">
+      <button type="button" class="btn btn-sm btn-primary add-contributor">
+        Add Contributor
+      </button>
+    </div>
+  </fieldset>
+
+  <div class="form-group mt-3 border d-flex justify-content-end">
+    <button [disabled]="submission_form.invalid" type="submit" class="btn btn-primary m-2">Submit Journal</button>
+    <button type="button" class="btn btn-secondary m-2">preview</button>
+    <button type="button" class="btn btn-danger m-2">Delete</button>
+  </div>
+</form>

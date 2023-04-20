@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -68,7 +69,9 @@
               "browserTarget": "Journal-accreditation:build:production"
             },
             "development": {
-              "browserTarget": "Journal-accreditation:build:development"
+              "browserTarget": "Journal-accreditation:build:development",
+              "proxyConfig": "src/proxy.conf.json"
+
             }
           },
           "defaultConfiguration": "development"
@@ -93,6 +96,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -100,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

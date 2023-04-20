@@ -1,0 +1,31 @@
+img {
+    border: 1px solid red;
+    object-fit: contain;
+    width: 100%;
+}
+
+.title {
+    width: auto;
+}
+
+.fieldset-custom {
+    
+    display: table;
+    padding: 20px;
+    margin: 0;
+    min-width: 0;
+
+
+}
+.legend-custom{
+    margin: 0;
+    padding: 0;
+    display: table-caption;
+    
+    
+    
+}
+
+.form-group {
+    box-shadow: .5px .5px .5px #ccc;
+}
